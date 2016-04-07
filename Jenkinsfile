@@ -1,19 +1,11 @@
 node {
-  for (int i=0; i< 2; ++i) {
-    stage "Stage #"+i
-    print 'Hello, world $i!'
-  }
+  stage 'Checkout'
+  checkout scm
+  sh 'ls'
 
-  stage "Stage Parallel"
-  def branches = [:]
-  for (int i = 0; i < 3; i++) {
-    branches["split${i}"] = {
-      stage "Stage parallel- #"+i
-      echo  'Starting sleep'
-      sleep 10
-      echo  'Finished sleep'
-    }
+  for (int i=0; i<2; i++) {
+    stage "Stage Build #$i"
+    print "Hello, world $i!"
   }
-  parallel branches
 }
 
