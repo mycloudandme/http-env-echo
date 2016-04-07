@@ -10,7 +10,7 @@ node {
     branches["split${i}"] = {
       stage "Stage parallel- #"+i
       echo  'Starting sleep'
-      sleep 10
+      sleep 5
       echo  'Finished sleep'
     }
   }
