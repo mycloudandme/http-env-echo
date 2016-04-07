@@ -6,14 +6,12 @@ node {
 
   stage "Stage Parallel"
   def branches = [:]
-  for (int i = 0; i < numHelloMessages.toInteger(); i++) {
+  for (int i = 0; i < 3; i++) {
     branches["split${i}"] = {
       stage "Stage parallel- #"+i
-      node('remote') {
-       echo  'Starting sleep'
-       sleep 10
-       echo  'Finished sleep'
-      }
+      echo  'Starting sleep'
+      sleep 10
+      echo  'Finished sleep'
     }
   }
   parallel branches
