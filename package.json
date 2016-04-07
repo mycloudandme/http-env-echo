@@ -1,6 +1,6 @@
 {
   "name": "http-env-echo",
-  "version": "4.0.0",
+  "version": "6.0.0",
   "description": "Simple node project for pipeline testing.",
   "main": "server.js",
   "scripts": {
