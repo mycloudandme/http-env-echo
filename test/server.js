@@ -5,6 +5,7 @@ require('co-mocha');
 const assert = require('assert');
 const http = require('http');
 const server = require('../server');
+const version = require('../package.json').version;
 
 describe('server', () => {
   let serverUrl;
@@ -42,7 +43,7 @@ describe('server', () => {
 
     it('should return version', function* () {
       let res = yield getUrl();
-      assert.strictEqual('4.0.0', res['version']);
+      assert.strictEqual(version, res['version']);
     });
 
     it('should return message', function* () {

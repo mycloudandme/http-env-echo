@@ -1,7 +1,7 @@
 'use strict';
 
 const http = require('http');
-const version = require('./package.json')['version'];
+const version = require('./package.json').version;
 
 exports.MESSAGE = process.env.MESSAGE || 'unknown';
 
