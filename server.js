@@ -6,6 +6,7 @@ const version = require('./package.json').version;
 exports.MESSAGE = process.env.MESSAGE || 'unknown';
 
 let server = http.createServer(function(req, res) {
+  // FIXME: not really but testing
   let message = exports.MESSAGE;
   res.end(JSON.stringify({ version, message }));
 });
